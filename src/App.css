@@ -188,6 +188,12 @@ h3 {
   margin-top: 3px;
 }
 
+.symptom strong,
+.symptom small,
+.advice span {
+  overflow-wrap: anywhere;
+}
+
 .symptom.active {
   background: #fff8f4;
   border-color: #e48b64;
@@ -481,6 +487,59 @@ input[type='range'] {
 
   .session-panel {
     grid-row: span 2;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-band {
+    gap: 16px;
+    padding: 20px 14px 18px;
+  }
+
+  h1 {
+    font-size: clamp(2.05rem, 10vw, 2.45rem);
+    max-width: 12ch;
+  }
+
+  .hero-copy {
+    gap: 12px;
+  }
+
+  .hero-copy p {
+    font-size: 0.96rem;
+    line-height: 1.48;
+  }
+
+  .phone-preview {
+    border-radius: 22px;
+    gap: 10px;
+    min-height: 205px;
+    padding: 16px;
+  }
+
+  .progress-ring {
+    margin-top: 2px;
+    width: min(42vw, 132px);
+  }
+
+  .progress-ring span {
+    font-size: 1.68rem;
+  }
+
+  .phone-preview > p {
+    font-size: 0.92rem;
+  }
+
+  .safety-panel,
+  .panel,
+  .timeline-band {
+    margin-inline: 8px;
+    padding: 14px;
+  }
+
+  .symptom {
+    gap: 10px;
+    padding: 11px;
   }
 }
 

@@ -181,6 +181,7 @@ function App() {
         <div className="symptom-list">
           {symptomOptions.map((symptom) => (
             <button
+              aria-pressed={symptoms[symptom.key]}
               className={symptoms[symptom.key] ? 'symptom active' : 'symptom'}
               key={symptom.key}
               onClick={() => toggleSymptom(symptom.key)}
@@ -213,6 +214,7 @@ function App() {
           <div className="segmented" aria-label="Session type">
             {sessions.map((session) => (
               <button
+                aria-pressed={sessionType === session.key}
                 className={sessionType === session.key ? 'selected' : ''}
                 key={session.key}
                 onClick={() => setSessionType(session.key)}
@@ -300,6 +302,7 @@ function App() {
           <div className="medication-list">
             {medications.map((medicine) => (
               <button
+                aria-pressed={checkedMedication.includes(medicine)}
                 className={
                   checkedMedication.includes(medicine) ? 'taken' : undefined
                 }
@@ -420,12 +423,12 @@ function SafetyAdvice({ status }: { status: ReturnType<typeof getSafetyStatus> }
     <div className="advice ready-advice" role="status">
       <ShieldCheck size={20} aria-hidden="true" />
       <div>
-          <strong>Ready to consider a planned session.</strong>
-          <span>
+        <strong>Ready to consider a planned session.</strong>
+        <span>
           You have not reported symptoms this prototype flags. This does not
           confirm exercise is safe. Keep checking symptoms and follow your
           clinician-approved plan.
-          </span>
+        </span>
       </div>
     </div>
   )
